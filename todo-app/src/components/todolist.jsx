@@ -9,6 +9,4 @@ function Todolist({ todos,deletetodo }) {
             ))}
         </div>
     )
-}
-
 export default Todolist;
