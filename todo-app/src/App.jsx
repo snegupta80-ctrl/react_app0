@@ -7,8 +7,10 @@ function App() {
   const [todos, setTodos] = useState([]);
 
   const handleAddTodo = (newtodo) => {
-    setTodos([...todos, newtodo])
-
+    setTodos([...todos, newtodo]);
+    if ('Notification' in window && Notification.permission === 'default') {
+      Notification.requestPermission();
+    }
   };
 
   const handleDeleteTodo = (todoId) => {
@@ -16,11 +18,11 @@ function App() {
   };
 
   return (
-    <>
+    <div className="min-h-screen">
       <Header />
       <Todoinput addTodo={handleAddTodo} />
       <Todolist todos={todos} onDelete={handleDeleteTodo} />
-    </>
+    </div>
   );
 }
 
