@@ -1,14 +1,12 @@
-import react from "react";
+import React from "react";
 
-function Todolist({ todos }) {
+function Todoitem({ todo, index, deleteTodo }) {
     return (
-        <div>
-            <p>{todos.length}
-                <button onClick={() => deleteTodo(index)}>Delete </button>
-            </p>
+        <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
+            <p>{todo}</p>
+            <button onClick={() => deleteTodo(index)}>Delete</button>
         </div>
-    )
+    );
 }
 
 export default Todoitem;
-;
